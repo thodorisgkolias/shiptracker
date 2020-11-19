@@ -15,7 +15,7 @@ ui <- dashboardPage(
       )
     ),
     fluidRow(
-      leafletOutput("route", height = "800px")
+      leafletOutput("route", height = "600px")
       
     ),
     fluidRow(

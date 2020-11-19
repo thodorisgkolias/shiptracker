@@ -52,13 +52,11 @@ server <- shinyServer(
                             library = "fa",
                             markerColor = "darkblue"
                           )) %>%
-        # addCircleMarkers(lng = Lon, 
-        #                  lat = Lat) %>%
         addPolylines(lng = Lon,
-                     lat = Lat) %>%
-        addPopups(lng = Lon[2],
-                  lat = Lat[2],
-                  popup = paste0(ShipRoute$SHIPNAME, ' has traveled ', round(ShipRoute$Dist,0), 'm'))
+                     lat = Lat,
+                     label = paste0(ShipRoute$SHIPNAME, ' has traveled ', round(ShipRoute$Dist,0), 'm'),
+                     labelOptions = labelOptions(permanent = TRUE)) 
+     
     })
     
     # Value boxes
