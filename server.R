@@ -45,8 +45,15 @@ server <- shinyServer(
       
       leaflet() %>%
         addTiles() %>%
-        addCircleMarkers(lng = Lon, 
-                         lat = Lat) %>%
+        addAwesomeMarkers(lng = Lon, 
+                          lat = Lat,icon = awesomeIcons(
+                            icon = "ship",
+                            iconColor = "#ffffff",
+                            library = "fa",
+                            markerColor = "darkblue"
+                          )) %>%
+        # addCircleMarkers(lng = Lon, 
+        #                  lat = Lat) %>%
         addPolylines(lng = Lon,
                      lat = Lat) %>%
         addPopups(lng = Lon[2],
